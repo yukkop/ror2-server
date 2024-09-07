@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  ror2-server:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./mods:/root/ror2ds-mods
+    env_file: ".env"
+    environment:
+      - PORT=${PORT:-27015}
+    ports:
+      - ${PORT:-27015}:27015/udp
