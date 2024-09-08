@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ARG WINE_REL="stable"
+# ARG WINE_VER="7.0.0.0~focal-1"
+
 function maybe_replace_wine()
 {
     FOUND=$(dpkg --get-selections | grep "winehq-${WINE_REPLACE_REL}")
